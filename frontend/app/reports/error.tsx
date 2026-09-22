@@ -17,16 +17,11 @@ export default function ReportsError({
       </nav>
 
       <section className="card card--padded card--error">
-        <h1 style={{ marginTop: 0, marginBottom: "var(--space-2)" }}>
-          Reports
-        </h1>
-        <p
-          style={{
-            marginTop: 0,
-            marginBottom: "var(--space-3)",
-            color: "var(--danger)",
-          }}
-        >
+        <span className="overline" style={{ marginBottom: "var(--space-2)" }}>
+          Module · 03
+        </span>
+        <h1 style={{ marginBottom: "var(--space-2)" }}>Reports</h1>
+        <p style={{ marginTop: 0, marginBottom: "var(--space-3)" }}>
           Could not load the report summary.
         </p>
         <button type="button" className="button" onClick={reset}>

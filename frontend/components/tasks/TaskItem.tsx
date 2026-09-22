@@ -19,7 +19,7 @@ export function TaskItem({ task, busy, onToggle }: TaskItemProps) {
           alignItems: "start",
         }}
       >
-        <p className="task-item__title" style={{ margin: 0, fontWeight: 600 }}>
+        <p className="task-item__title" style={{ margin: 0 }}>
           {task.title}
         </p>
         <span

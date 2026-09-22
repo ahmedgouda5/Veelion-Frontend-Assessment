@@ -11,9 +11,7 @@ export function TaskList({ tasks, updatingTaskId, onToggle }: TaskListProps) {
   if (tasks.length === 0) {
     return (
       <section className="card card--padded">
-        <p style={{ margin: 0, color: "var(--muted)" }}>
-          No tasks match this filter.
-        </p>
+        <p className="empty">No tasks match this filter.</p>
       </section>
     );
   }

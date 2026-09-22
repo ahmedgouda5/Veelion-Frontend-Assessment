@@ -29,23 +29,26 @@ export default async function ReportsPage() {
       </nav>
 
       <section className="card card--padded">
-        <h1 style={{ marginTop: 0, marginBottom: "var(--space-2)" }}>
-          Reports
-        </h1>
-        <p style={{ margin: 0, color: "var(--muted)" }}>
-          Task and activity summary statistics.
-        </p>
+        <span className="overline" style={{ marginBottom: "var(--space-2)" }}>
+          Module · 03
+        </span>
+        <h1 style={{ marginBottom: "var(--space-2)" }}>Reports</h1>
+        <p className="lead">Task and activity summary statistics.</p>
       </section>
 
       <section className="stat-grid">
         <div className="card card--padded">
-          <small style={{ color: "var(--muted)" }}>Total tasks</small>
-          <p className="stat-value">{summary.total}</p>
+          <div className="stat-block">
+            <span className="stat-label">Total tasks</span>
+            <span className="stat-value">{summary.total}</span>
+          </div>
         </div>
 
         <div className="card card--padded">
-          <small style={{ color: "var(--muted)" }}>Recent activity</small>
-          <p className="stat-value">{summary.recentActivityCount}</p>
+          <div className="stat-block">
+            <span className="stat-label">Recent activity</span>
+            <span className="stat-value">{summary.recentActivityCount}</span>
+          </div>
         </div>
       </section>
 
@@ -53,12 +56,12 @@ export default async function ReportsPage() {
         className="card card--padded"
         aria-label="Tasks grouped by status"
       >
-        <h2 style={{ marginTop: 0, marginBottom: "var(--space-3)" }}>
+        <h2 style={{ marginTop: 0, marginBottom: "var(--space-4)" }}>
           Tasks by status
         </h2>
         <ul className="status-list">
           {STATUS_ENTRIES.map(({ key, label }) => (
-            <li key={key} className="status-item card--padded">
+            <li key={key} className="status-item">
               <span>{label}</span>
               <span className="badge">{summary.byStatus[key]}</span>
             </li>

@@ -24,28 +24,23 @@ export function TaskDashboard() {
   return (
     <section className="stack">
       <header className="card card--padded">
-        <h1 style={{ marginTop: 0, marginBottom: "var(--space-2)" }}>
-          Task Dashboard
-        </h1>
+        <span className="overline" style={{ marginBottom: "var(--space-2)" }}>
+          Module · 01
+        </span>
+        <h1>Task Dashboard</h1>
       </header>
 
       <StatusFilter value={filter} onChange={setFilter} disabled={loading} />
 
       {loading ? (
-        <section className="card card--padded">
-          <p style={{ margin: 0 }}>Loading tasks...</p>
+        <section className="card card--padded" aria-busy="true">
+          <p className="empty">Loading tasks...</p>
         </section>
       ) : null}
 
       {error ? (
         <section className="card card--padded card--error">
-          <p
-            style={{
-              marginTop: 0,
-              marginBottom: "var(--space-3)",
-              color: "var(--danger)",
-            }}
-          >
+          <p style={{ marginTop: 0, marginBottom: "var(--space-3)" }}>
             {error}
           </p>
           <button type="button" className="button" onClick={reload}>

@@ -15,9 +15,10 @@ export function ActivityFeed({ initialActivity }: ActivityFeedProps) {
   return (
     <>
       <section className="card card--padded">
-        <h1 style={{ marginTop: 0, marginBottom: "var(--space-2)" }}>
-          Activity Feed
-        </h1>
+        <span className="overline" style={{ marginBottom: "var(--space-2)" }}>
+          Module · 02
+        </span>
+        <h1 style={{ marginBottom: "var(--space-4)" }}>Activity Feed</h1>
 
         <label className="visually-hidden" htmlFor="activity-search">
           Search activity
@@ -31,27 +32,26 @@ export function ActivityFeed({ initialActivity }: ActivityFeedProps) {
         />
       </section>
 
-      <section className="card card--padded">
-        <small style={{ color: "var(--muted)" }}>
-          Total: {total} | Visible: {shownActivity.length}
-        </small>
+      <section className="card card--padded stats-bar">
+        <div className="stat-block">
+          <span className="stat-label">Total</span>
+          <span className="stat-value">{total}</span>
+        </div>
+        <div className="stat-block">
+          <span className="stat-label">Visible</span>
+          <span className="stat-value">{shownActivity.length}</span>
+        </div>
       </section>
 
       {loading ? (
-        <section className="card card--padded">
-          <p style={{ margin: 0 }}>Loading activity...</p>
+        <section className="card card--padded" aria-busy="true">
+          <p className="empty">Loading activity...</p>
         </section>
       ) : null}
 
       {error ? (
         <section className="card card--padded card--error">
-          <p
-            style={{
-              marginTop: 0,
-              marginBottom: "var(--space-3)",
-              color: "var(--danger)",
-            }}
-          >
+          <p style={{ marginTop: 0, marginBottom: "var(--space-3)" }}>
             {error}
           </p>
           <button type="button" className="button" onClick={reload}>
@@ -63,9 +63,7 @@ export function ActivityFeed({ initialActivity }: ActivityFeedProps) {
       {!loading && !error ? (
         <section className="card card--padded" aria-label="Activity list">
           {shownActivity.length === 0 ? (
-            <p style={{ margin: 0, color: "var(--muted)" }}>
-              No activity matches this search.
-            </p>
+            <p className="empty">No activity matches this search.</p>
           ) : (
             <ul className="activity-list">
               {shownActivity.map((item) => (
