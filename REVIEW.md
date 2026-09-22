@@ -2,12 +2,12 @@
 
 ### 1. Performance Issues
 
-- Unnecessary setInterval causes continuous re-renders on the Activity page.
-- forcedList creates redundant array copies and extra renders.
-- Activity filtering runs twice with identical functions.
-- useMemo for stats unnecessarily depends on tick.
-- Activity data is fully fetched and processed on every request.
-- JSON file storage will become inefficient as activity data grows.
+- Unnecessary setInterval causes continuous re-renders on the Activity page
+- forcedList creates redundant array copies and extra renders
+- Activity filtering runs twice with identical functions
+- useMemo for stats unnecessarily depends on tick
+- Activity data is fully fetched and processed on every request
+- JSON file storage will become inefficient as activity data grows
 
 ### 2. Maintainability Issues
 

@@ -26,6 +26,14 @@ export default function HomePage() {
           </p>
           <span className="nav-card__hint">Open module →</span>
         </Link>
+
+        <Link href="/reports" className="card nav-card">
+          <h2 style={{ marginTop: 0 }}>Reports</h2>
+          <p style={{ margin: "0 0 var(--space-3)" }}>
+            View totals and task counts grouped by status.
+          </p>
+          <span className="nav-card__hint">Open module →</span>
+        </Link>
       </section>
     </main>
   );
